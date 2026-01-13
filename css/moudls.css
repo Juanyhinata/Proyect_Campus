@@ -1,0 +1,191 @@
+/* ============================
+   MODULO ITEM (DRAGGABLE)
+============================ */
+.modulo-item {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+
+.modulo-item:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.modulo-item:active {
+    cursor: grabbing;
+}
+
+/* ============================
+   CONTENEDOR DE MÓDULOS
+============================ */
+.modulo {
+    border-bottom: 1px solid #ddd;
+}
+
+.modulo:last-child {
+    border-bottom: none;
+}
+
+/* ============================
+   ENCABEZADO DEL MÓDULO
+============================ */
+.modulo-encabezado {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    user-select: none;
+}
+
+.modulo-encabezado:hover {
+    background-color: #e0e0e0;
+}
+
+.titulo-modulo {
+    margin: 0;
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+.porcentaje {
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+/* ============================
+   BARRA DE PROGRESO
+============================ */
+.barra-progreso-modulo {
+    height: 10px;
+    background-color: #ddd;
+    margin: 0 15px;
+    border-radius: 5px;
+}
+
+.progreso-interno {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+/* ============================
+   CONTENIDO DESPLEGABLE
+============================ */
+.modulo-contenido {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.modulo-contenido ul {
+    list-style-type: disc;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.modulo-contenido li {
+    margin-left: 20px;
+    padding: 5px 0;
+}
+
+/* Clases activas para JS */
+.modulo-activo .modulo-contenido {
+    max-height: 500px;
+}
+
+.modulo-activo .triangulo {
+    transform: rotate(90deg);
+}
+
+.triangulo {
+    transition: transform 0.4s ease;
+    margin-right: 10px;
+}
+
+/* ============================
+   MODAL
+============================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: #000;
+}
+
+/* ============================
+   VIDEO RESPONSIVE
+============================ */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================
+   LISTA CLICKABLE
+============================ */
+.lista-temas li {
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+/* ============================
+   HEADER DEL MÓDULO
+============================ */
+.header-modulo {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+/* En pantallas pequeñas (móviles) → 1 columna */
+@media (max-width: 768px) {
+    .grid-cursos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+}
+
+/* En tablets → 2 columnas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-cursos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,544 @@
+/* ============================================================
+   RESPONSIVE DESIGN - MOBILE MENU & COMPLETE RESPONSIVENESS
+   Added: Mobile hamburger menu, responsive tables, forms, and all components
+============================================================ */
+
+/* --- MOBILE MENU BUTTON (Hamburger) --- */
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop by default */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+    min-width: 50px;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+
+.menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.hamburger-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* --- MENU OVERLAY --- */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE STYLES (max-width: 768px)
+============================================================ */
+@media (max-width: 768px) {
+
+    /* --- SHOW MOBILE MENU BUTTON --- */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* --- SIDEBAR: Fixed and hidden by default --- */
+    .barra-lateral {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 280px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+        padding: 80px 20px 20px 20px;
+        /* Extra padding top for menu button */
+    }
+
+    .barra-lateral.active {
+        transform: translateX(0);
+    }
+
+    /* --- MAIN CONTENT: Full width --- */
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    .contenido-principal {
+        margin: 10px;
+        padding: 15px;
+        width: calc(100% - 20px);
+    }
+
+    /* --- HEADER --- */
+    .encabezado-superior {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 20px;
+    }
+
+    .titulo-pagina p {
+        font-size: 14px;
+    }
+
+    .usuario-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nombre-usuario {
+        font-size: 14px;
+    }
+
+    .icono-usuario {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* --- TABLES: Scrollable --- */
+    .tabla-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -15px;
+        /* Extend to edges */
+        padding: 0 15px;
+    }
+
+    .tabla-datos {
+        min-width: 600px;
+        font-size: 14px;
+    }
+
+    .tabla-datos th,
+    .tabla-datos td {
+        padding: 12px 15px;
+    }
+
+    /* --- FORMS --- */
+    .formulario-curso,
+    .formulario-modulo,
+    .formulario-tema,
+    .form-card {
+        padding: 20px 15px;
+        margin: 15px 0;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 16px;
+        /* Prevent zoom on iOS */
+        padding: 12px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    /* --- BUTTONS --- */
+    .btn {
+        width: 100%;
+        margin: 8px 0;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .btn-small {
+        width: auto;
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 4px;
+    }
+
+    .btn-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* --- TOOLBAR --- */
+    .barra-herramientas {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 15px;
+    }
+
+    .barra-herramientas form {
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    .barra-herramientas .buscador {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .barra-herramientas .btn {
+        width: 100%;
+    }
+
+    /* --- CARDS & GRID --- */
+    .grid-cursos {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .card-curso {
+        margin: 0;
+    }
+
+    .curso-imagen {
+        height: 180px;
+    }
+
+    /* --- MODULES & ACCORDION --- */
+    .modulo-encabezado {
+        flex-wrap: wrap;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .titulo-modulo {
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .barra-progreso-modulo {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .porcentaje {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .modulo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .tema-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .handle {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+
+    /* --- NAVIGATION --- */
+    .navegacion li a {
+        padding: 15px;
+        font-size: 16px;
+        min-height: 48px;
+        /* Touch target */
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-avalon {
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .logo-avalon img {
+        max-width: 150px;
+    }
+
+    /* --- MODAL --- */
+    .modal-contenido {
+        margin: 5% auto;
+        width: 95%;
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .cerrar-modal {
+        font-size: 32px;
+        padding: 5px 10px;
+    }
+
+    /* --- ALERTS --- */
+    .alerta {
+        padding: 12px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    /* --- PAGINATION --- */
+    .paginacion {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .paginacion .btn-paginacion,
+    .paginacion span {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- EVALUATION BADGE --- */
+    .evaluacion-badge {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    /* --- COURSE HEADER --- */
+    .curso-header {
+        padding: 40px 15px;
+    }
+
+    .curso-titulo {
+        font-size: 20px;
+    }
+
+    /* --- CONFIRM BOX --- */
+    .confirmar-box {
+        margin: 40px 15px;
+        padding: 25px;
+    }
+
+    /* --- HEADER SECTION --- */
+    .header-seccion {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+
+    .header-seccion h2 {
+        font-size: 20px;
+    }
+
+    /* --- ACTIONS --- */
+    .acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .acciones .btn {
+        flex: 1;
+        min-width: calc(50% - 4px);
+    }
+}
+
+/* ============================================================
+   TABLET RESPONSIVE STYLES (769px - 1024px)
+============================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .barra-lateral {
+        width: 220px;
+        padding: 15px;
+    }
+
+    .contenido-principal {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .grid-cursos {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .formulario-curso,
+    .formulario-modulo,
+    .formulario-tema {
+        padding: 30px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 22px;
+    }
+}
+
+/* ============================================================
+   SMALL MOBILE (max-width: 480px)
+============================================================ */
+@media (max-width: 480px) {
+
+    .menu-toggle {
+        top: 15px;
+        left: 15px;
+        padding: 10px 12px;
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    .hamburger-icon {
+        font-size: 20px;
+    }
+
+    .barra-lateral {
+        width: 260px;
+    }
+
+    .contenido-principal {
+        margin: 8px;
+        padding: 12px;
+    }
+
+    .titulo-pagina h1 {
+        font-size: 18px;
+    }
+
+    .titulo-pagina p {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+
+    .tabla-datos {
+        font-size: 13px;
+    }
+
+    .tabla-datos th,
+    .tabla-datos td {
+        padding: 10px 12px;
+    }
+
+    .card-curso {
+        border-radius: 10px;
+    }
+
+    .curso-imagen {
+        height: 160px;
+    }
+
+    .formulario-curso,
+    .formulario-modulo,
+    .formulario-tema {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        padding: 10px;
+    }
+}
+
+/* ============================================================
+   LANDSCAPE ORIENTATION (Mobile/Tablet)
+============================================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .barra-lateral {
+        padding: 60px 15px 15px 15px;
+    }
+
+    .menu-toggle {
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY & TOUCH IMPROVEMENTS
+============================================================ */
+@media (max-width: 768px) {
+
+    /* Ensure all interactive elements have adequate touch targets */
+    a,
+    button,
+    input[type="submit"],
+    input[type="button"],
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Improve tap highlight */
+    * {
+        -webkit-tap-highlight-color: rgba(0, 123, 255, 0.2);
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Prevent text size adjustment */
+    body {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+}
