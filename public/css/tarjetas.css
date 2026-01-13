@@ -1,0 +1,122 @@
+/* Contenedor para alinear las tarjetas */
+.tarjetas-container {
+    display: flex;
+    flex-direction: column; /* Apila las tarjetas una encima de la otra */
+    gap: 20px; /* Espacio entre cada tarjeta */
+}
+
+/* Estilo para cada tarjeta */
+.tarjeta-progreso {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para que destaquen */
+}
+
+/* Contenedor para alinear los elementos de la tarjeta */
+.tarjeta-info {
+    display: flex;
+    align-items: center; /* Centra verticalmente todos los elementos */
+    gap: 15px; /* Espacio entre el logo, la barra y el porcentaje */
+}
+
+/* Estilo para los logos de las tarjetas */
+.tarjeta-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+/* Estilo para la barra de progreso (el fondo gris) */
+.barra-progreso {
+    flex-grow: 1; /* Hace que la barra ocupe todo el espacio restante */
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que la barra de progreso no se salga */
+}
+
+/* La barra de progreso azul */
+.progreso {
+    height: 100%; /* Ocupa toda la altura del contenedor padre */
+    background-color: #2a6983;
+    border-radius: 8px;
+    transition: width 0.5s ease; /* Transición suave cuando el porcentaje cambie */
+}
+
+/* Estilo para el texto del porcentaje */
+.porcentaje {
+    font-weight: bold;
+    color: #555;
+    min-width: 40px; /* Asegura que no se deforme cuando el texto cambie */
+    text-align: right;
+}
+
+/* Añade esto a tu archivo tarjetas.css */
+
+/* Contenedor para alinear las tarjetas de curso */
+.tarjetas-container-cursos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas salten a la siguiente fila */
+    gap: 20px;       /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+/* Estilo para cada tarjeta de curso individual */
+.tarjeta-curso {
+    background-color: #f9f9f9;
+    border: 2px solid #007bff; /* Borde azul para que se parezca al diseño */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 220px; /* Ancho fijo de la tarjeta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse por encima de la tarjeta */
+.tarjeta-curso:hover {
+    transform: translateY(-5px); /* Se mueve ligeramente hacia arriba */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para el logo dentro de la tarjeta */
+.tarjeta-logo-curso {
+    width: 100px; /* Tamaño del logo */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el tipo de curso (Capacitador) */
+.tipo-curso {
+    font-size: 1.2em;
+    color: #555;
+    margin: 0;
+    border-bottom: 1px dashed #ccc; /* Línea punteada como en el diseño */
+    padding-bottom: 5px;
+}
+
+/* Estilo para el nombre del instructor */
+.instructor {
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 5px;
+}
+/* Añade esto a tu archivo tarjetas.css */
+
+.enlace-tarjeta {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit;        /* Hereda el color del texto del padre */
+}
+
+.tarjeta-curso {
+    /* ... Tus estilos existentes para la tarjeta ... */
+    cursor: pointer; /* Muestra el icono de la "manita" cuando el mouse pasa por encima */
+}
+
+/* Efecto al pasar el mouse por encima de la tarjeta */
+.enlace-tarjeta:hover .tarjeta-curso {
+    transform: translateY(-5px); /* Se mueve ligeramente hacia arriba */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}

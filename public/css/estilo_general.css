@@ -1,0 +1,80 @@
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Un gris claro para el fondo */
+}
+
+/* Estilo para el contenedor principal que envuelve todo */
+.contenedor-principal {
+    display: flex; /* Esto es clave para organizar los elementos uno al lado del otro */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana del navegador */
+}
+
+/* Estilo para la barra lateral */
+.barra-lateral {
+    width: 250px; /* Ancho fijo para el menú de la izquierda */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para que se vea más profesional */
+    padding: 20px; /* Espacio interno */
+}
+
+/* Estilo para el contenido principal (el área de la derecha) */
+.contenido-principal {
+    flex-grow: 1; /* Esto hace que ocupe todo el espacio restante */
+    background-color: #ffffff; /* Fondo blanco para esta área */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+/*Logo*/
+.logo-avalon {
+    text-align: center; /* Centra el logo */
+    margin-bottom: 30px; /* Un poco de espacio debajo del logo */
+}
+
+.logo-avalon img {
+    max-width: 150px;
+    height: auto;
+}
+/* Estilo para el encabezado de la página principal */
+.encabezado-superior {
+    display: flex; /* Usamos flexbox para alinear elementos */
+    justify-content: space-between; /* Alinea el título a la izquierda y el usuario a la derecha */
+    align-items: center; /* Centra los elementos verticalmente */
+    border-bottom: 2px solid #ccc; /* Una línea para separar el encabezado del contenido */
+    padding-bottom: 15px; /* Espacio debajo de la línea */
+    margin-bottom: 20px; /* Espacio entre el encabezado y las tarjetas */
+}
+
+.titulo-pagina h1 {
+    margin: 0; /* Quita el margen superior predeterminado del h1 */
+    font-size: 24px;
+    color: #333;
+}
+
+.titulo-pagina p {
+    margin: 0; /* Quita el margen superior predeterminado del p */
+    font-size: 16px;
+    color: #666;
+}
+
+.usuario-info {
+    display: flex; /* Para alinear el nombre y el ícono */
+    align-items: center; /* Centra verticalmente */
+}
+
+.nombre-usuario {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px; /* Espacio entre el texto y el ícono */
+}
+
+.icono-usuario {
+    width: 40px; /* Tamaño del ícono */
+    height: 40px;
+    border-radius: 50%; /* Esto hará que la imagen sea redonda si su ancho y alto son iguales */
+    border: 2px solid #007bff; /* Un borde para que se destaque */
+}

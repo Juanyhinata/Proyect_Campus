@@ -1,0 +1,155 @@
+.logos-openpos {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logos-openpos .logo-principal {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.acordeon-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.modulo {
+    border-bottom: 1px solid #ddd;
+}
+
+.modulo:last-child {
+    border-bottom: none;
+}
+
+.modulo-encabezado {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    user-select: none; /* Evita que el texto se seleccione */
+}
+
+.modulo-encabezado:hover {
+    background-color: #e0e0e0;
+}
+
+.titulo-modulo {
+    margin: 0;
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+.porcentaje {
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+.barra-progreso-modulo {
+    height: 10px;
+    background-color: #ddd;
+    margin: 0 15px;
+    border-radius: 5px;
+}
+
+.progreso-interno {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+.modulo-contenido {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out; /* Transición para desplegar */
+}
+
+.modulo-contenido ul {
+    list-style-type: disc;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.modulo-contenido li {
+    margin-left: 20px;
+    padding: 5px 0;
+}
+
+/* Clases para el JavaScript */
+.modulo-activo .modulo-contenido {
+    max-height: 500px; /* Un valor grande para que se muestre todo el contenido */
+}
+
+.modulo-activo .triangulo {
+    transform: rotate(90deg); /* Rota la flecha */
+}
+
+.triangulo {
+    transition: transform 0.4s ease;
+    margin-right: 10px;
+}
+
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Mantiene el modal en su lugar aunque el usuario haga scroll */
+    z-index: 1; /* Asegura que el modal esté encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Fondo gris semitransparente */
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centra el modal vertical y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para que la lista sea clickable */
+.lista-temas li {
+    cursor: pointer;
+    padding: 8px 0;
+}
